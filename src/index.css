@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smart Food Ordering Design System - Fresh & Appetizing Theme */
+
+@layer base {
+  :root {
+    /* Core Background & Text */
+    --background: 30 50% 98%;
+    --foreground: 20 20% 15%;
+
+    /* Card surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 20 20% 15%;
+
+    /* Popover surfaces */
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 20% 15%;
+
+    /* Primary - Warm Coral/Tomato Red */
+    --primary: 8 85% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Fresh Green */
+    --secondary: 142 50% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted backgrounds */
+    --muted: 30 30% 94%;
+    --muted-foreground: 20 10% 45%;
+
+    /* Accent - Golden/Amber for highlights */
+    --accent: 38 95% 55%;
+    --accent-foreground: 20 20% 10%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders & Inputs */
+    --border: 30 20% 88%;
+    --input: 30 20% 88%;
+    --ring: 8 85% 55%;
+
+    /* Border radius */
+    --radius: 0.75rem;
+
+    /* Sidebar (for admin) */
+    --sidebar-background: 20 15% 8%;
+    --sidebar-foreground: 30 30% 94%;
+    --sidebar-primary: 8 85% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 20 15% 15%;
+    --sidebar-accent-foreground: 30 30% 94%;
+    --sidebar-border: 20 15% 18%;
+    --sidebar-ring: 8 85% 55%;
+
+    /* Custom food-themed colors */
+    --fresh-green: 142 50% 45%;
+    --golden-amber: 38 95% 55%;
+    --warm-coral: 8 85% 55%;
+    --cream: 35 50% 95%;
+    --espresso: 20 25% 18%;
+    --pending: 38 95% 55%;
+    --preparing: 200 80% 50%;
+    --ready: 142 70% 45%;
+  }
+
+  .dark {
+    --background: 20 15% 8%;
+    --foreground: 30 30% 94%;
+
+    --card: 20 15% 12%;
+    --card-foreground: 30 30% 94%;
+
+    --popover: 20 15% 12%;
+    --popover-foreground: 30 30% 94%;
+
+    --primary: 8 85% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 142 50% 40%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 20 15% 18%;
+    --muted-foreground: 30 20% 60%;
+
+    --accent: 38 95% 50%;
+    --accent-foreground: 20 20% 10%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 20 15% 20%;
+    --input: 20 15% 20%;
+    --ring: 8 85% 60%;
+
+    --sidebar-background: 20 15% 6%;
+    --sidebar-foreground: 30 30% 94%;
+    --sidebar-primary: 8 85% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 20 15% 12%;
+    --sidebar-accent-foreground: 30 30% 94%;
+    --sidebar-border: 20 15% 15%;
+    --sidebar-ring: 8 85% 60%;
+
+    --fresh-green: 142 50% 50%;
+    --golden-amber: 38 95% 50%;
+    --warm-coral: 8 85% 60%;
+    --cream: 20 15% 15%;
+    --espresso: 30 30% 94%;
+    --pending: 38 95% 50%;
+    --preparing: 200 80% 55%;
+    --ready: 142 70% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  /* Glassmorphism */
+  .glass {
+    @apply bg-white/80 backdrop-blur-md border border-white/20;
+  }
+
+  /* Food card hover effect */
+  .food-card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+
+  /* Status badge glow effects */
+  .status-pending {
+    @apply bg-amber-100 text-amber-800 border border-amber-200;
+  }
+
+  .status-preparing {
+    @apply bg-blue-100 text-blue-800 border border-blue-200;
+  }
+
+  .status-ready {
+    @apply bg-green-100 text-green-800 border border-green-200 animate-pulse;
+  }
+
+  /* Gradient backgrounds */
+  .gradient-hero {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--warm-coral)) 50%, hsl(var(--golden-amber)) 100%);
+  }
+
+  .gradient-fresh {
+    background: linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(var(--fresh-green)) 100%);
+  }
+
+  /* Smooth scrolling */
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+
+  /* Hide scrollbar */
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
