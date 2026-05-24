@@ -132,3 +132,11 @@ Final Year Engineering Project
 This project is developed for academic and learning purposes.
 
 ---
+
+## ⭐ Support
+
+If you like this project, give it a ⭐ on GitHub!
+
+Repository: https://github.com/pratiksdashore/FY-Cafe-Management
+
+---
